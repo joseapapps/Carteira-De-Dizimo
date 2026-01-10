@@ -226,18 +226,18 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 pb-32 transition-colors duration-500 overflow-x-hidden">
       {/* Dynamic background accents */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-20 overflow-hidden z-0">
-        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-500 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-purple-500 rounded-full blur-[100px]"></div>
+        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-500 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-yellow-600 rounded-full blur-[100px]"></div>
       </div>
 
       {/* Header */}
       <header className="relative z-10 p-6 md:p-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="flex flex-col">
           <div className="flex items-center gap-2 mb-1">
-            <div className="bg-indigo-600 p-2 rounded-xl text-white shadow-lg shadow-indigo-500/20">
+            <div className="bg-amber-600 p-2 rounded-xl text-white shadow-lg shadow-amber-500/20">
               <Wallet size={24} />
             </div>
-            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-amber-500 to-yellow-700 bg-clip-text text-transparent">
               Carteira De Dizimo & Prosperidade
             </h1>
           </div>
@@ -249,7 +249,7 @@ const App: React.FC = () => {
 
         <div className="flex items-center gap-4 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md p-2 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700">
           <div className="flex items-center gap-3 px-4 py-2 border-r border-gray-100 dark:border-gray-700">
-            <Clock size={18} className="text-indigo-500" />
+            <Clock size={18} className="text-amber-500" />
             <span className="font-mono text-xl font-bold dark:text-white tracking-tighter">{currentTime.toLocaleTimeString('pt-BR')}</span>
           </div>
           <div className="flex items-center gap-3 px-3">
@@ -277,17 +277,17 @@ const App: React.FC = () => {
         {view === ViewMode.DASHBOARD && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
-              {/* Main Balance Card */}
+              {/* Main Balance Card (Gold Theme) */}
               <div className="relative overflow-hidden group rounded-[40px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 opacity-100 transition-transform duration-700 group-hover:scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-400 via-amber-600 to-yellow-800 opacity-100 transition-transform duration-700 group-hover:scale-105"></div>
                 {/* Decorative circles */}
-                <div className="absolute top-[-50px] right-[-50px] w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-[-30px] left-[-30px] w-32 h-32 bg-purple-400/20 rounded-full blur-2xl"></div>
+                <div className="absolute top-[-50px] right-[-50px] w-48 h-48 bg-white/20 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-[-30px] left-[-30px] w-32 h-32 bg-yellow-400/30 rounded-full blur-2xl"></div>
                 
                 <div className="relative z-10 p-10 text-white flex flex-col justify-between min-h-[300px]">
                   <div className="flex justify-between items-start">
                     <div>
-                      <p className="text-indigo-100 text-xs font-bold uppercase tracking-[0.2em] mb-2 opacity-80">Saldo Total Bruto</p>
+                      <p className="text-amber-50 text-xs font-bold uppercase tracking-[0.2em] mb-2 opacity-80">Saldo Total Bruto</p>
                       <h2 className="text-6xl font-black tracking-tight drop-shadow-lg">
                         R$ {totalBalance.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                       </h2>
@@ -295,7 +295,7 @@ const App: React.FC = () => {
                     <div className="flex flex-col items-end">
                        <button 
                         onClick={() => setShowGoalModal(true)}
-                        className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold transition-all border border-white/10 active:scale-95 mb-4"
+                        className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold transition-all border border-white/20 active:scale-95 mb-4"
                        >
                          <Target size={16} /> Meta
                        </button>
@@ -304,14 +304,14 @@ const App: React.FC = () => {
 
                   <div className="flex flex-col md:flex-row gap-4 mt-8">
                     <div className="bg-white/10 backdrop-blur-md rounded-3xl p-5 flex-1 border border-white/10 flex flex-col justify-center">
-                      <p className="text-pink-100 text-[10px] uppercase font-bold mb-1 opacity-70 flex items-center gap-1">
+                      <p className="text-pink-100 text-[10px] uppercase font-bold mb-1 opacity-80 flex items-center gap-1">
                         <Sparkles size={10} /> Dízimo Sugerido (10%)
                       </p>
                       <p className="text-3xl font-black text-pink-200">R$ {titheValue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
                     </div>
                     <div className="bg-white/10 backdrop-blur-md rounded-3xl p-5 flex-1 border border-white/10 flex flex-col justify-center">
-                      <p className="text-indigo-100 text-[10px] uppercase font-bold mb-1 opacity-70">Saldo Líquido</p>
-                      <p className="text-3xl font-black text-indigo-100">R$ {netBalance.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+                      <p className="text-amber-50 text-[10px] uppercase font-bold mb-1 opacity-80">Saldo Líquido</p>
+                      <p className="text-3xl font-black text-amber-50">R$ {netBalance.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
                     </div>
                   </div>
                 </div>
@@ -322,17 +322,17 @@ const App: React.FC = () => {
                 <div className="flex justify-between items-end mb-4">
                   <div>
                     <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1 flex items-center gap-2">
-                      <Target size={14} className="text-indigo-500" /> Meta de Prosperidade
+                      <Target size={14} className="text-amber-500" /> Meta de Prosperidade
                     </h3>
                     <p className="text-2xl font-black dark:text-white">R$ {data.prosperityGoal?.toLocaleString('pt-BR')}</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-4xl font-black text-indigo-600 dark:text-indigo-400">{Math.round(goalProgress)}%</span>
+                    <span className="text-4xl font-black text-amber-600 dark:text-amber-500">{Math.round(goalProgress)}%</span>
                   </div>
                 </div>
                 <div className="w-full bg-gray-100 dark:bg-gray-700 h-4 rounded-full overflow-hidden mb-2">
                   <div 
-                    className="h-full bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-1000 ease-out rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+                    className="h-full bg-gradient-to-r from-amber-400 to-amber-600 transition-all duration-1000 ease-out rounded-full shadow-[0_0_15px_rgba(245,158,11,0.5)]"
                     style={{ width: `${goalProgress}%` }}
                   ></div>
                 </div>
@@ -343,11 +343,11 @@ const App: React.FC = () => {
 
               {/* AI Insights and Future Projection */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="bg-gradient-to-br from-indigo-50 to-white dark:from-gray-800/40 dark:to-gray-800/40 border-none flex flex-col justify-between">
+                <Card className="bg-gradient-to-br from-amber-50 to-white dark:from-gray-800/40 dark:to-gray-800/40 border-none flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-start mb-4">
                        <div className="bg-white dark:bg-gray-700 p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-600">
-                        <Sparkles className="text-indigo-600 dark:text-indigo-400" size={20} />
+                        <Sparkles className="text-amber-600 dark:text-amber-500" size={20} />
                       </div>
                       <div className="flex gap-2">
                         <button onClick={speakAdvice} title="Ouvir conselho" className="p-2 hover:bg-white dark:hover:bg-gray-600 rounded-xl transition-colors">
@@ -385,7 +385,7 @@ const App: React.FC = () => {
                 <h3 className="text-xl font-black dark:text-white">Atividades</h3>
                 <button 
                   onClick={() => setIsAdding(true)}
-                  className="bg-indigo-600 text-white p-3 rounded-2xl shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1 transition-all active:scale-95"
+                  className="bg-amber-600 text-white p-3 rounded-2xl shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-1 transition-all active:scale-95"
                 >
                   <Plus size={24} />
                 </button>
@@ -401,8 +401,8 @@ const App: React.FC = () => {
                   </div>
                 ) : (
                   data.transactions.slice().reverse().slice(0, 8).map(t => (
-                    <div key={t.id} className="group bg-white dark:bg-gray-800 p-5 rounded-[2rem] flex items-center gap-4 shadow-md shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-gray-700 hover:border-indigo-200 dark:hover:border-indigo-900 transition-all hover:scale-[1.02]">
-                      <div className="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-2xl text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <div key={t.id} className="group bg-white dark:bg-gray-800 p-5 rounded-[2rem] flex items-center gap-4 shadow-md shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-gray-700 hover:border-amber-200 dark:hover:border-amber-900 transition-all hover:scale-[1.02]">
+                      <div className="bg-amber-50 dark:bg-amber-900/30 p-3 rounded-2xl text-amber-600 dark:text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                         <TrendingUp size={20} />
                       </div>
                       <div className="flex-1 overflow-hidden">
@@ -410,7 +410,7 @@ const App: React.FC = () => {
                         <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{new Date(t.date).toLocaleDateString('pt-BR')}</p>
                       </div>
                       <div className="text-right">
-                        <p className="font-black text-indigo-600 dark:text-indigo-400 text-base">R$ {t.amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+                        <p className="font-black text-amber-600 dark:text-amber-500 text-base">R$ {t.amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
                         <p className="text-[9px] text-pink-500 font-bold">-{ (t.amount * 0.1).toFixed(2) }</p>
                       </div>
                     </div>
@@ -419,7 +419,7 @@ const App: React.FC = () => {
                 {data.transactions.length > 5 && (
                    <button 
                     onClick={() => setView(ViewMode.HISTORY)}
-                    className="w-full py-4 text-xs font-black text-gray-400 uppercase tracking-widest hover:text-indigo-500 transition-colors"
+                    className="w-full py-4 text-xs font-black text-gray-400 uppercase tracking-widest hover:text-amber-500 transition-colors"
                    >
                      Ver histórico completo
                    </button>
@@ -433,13 +433,13 @@ const App: React.FC = () => {
           <div className="space-y-6 animate-in fade-in duration-700 slide-in-from-bottom-4">
             <div className="flex justify-between items-center">
                <h2 className="text-3xl font-black dark:text-white flex items-center gap-3">
-                <div className="bg-indigo-100 dark:bg-indigo-900/50 p-3 rounded-2xl">
-                  <History className="text-indigo-600" size={24} />
+                <div className="bg-amber-100 dark:bg-amber-900/50 p-3 rounded-2xl">
+                  <History className="text-amber-600" size={24} />
                 </div> 
                 Transações
               </h2>
               <div className="flex gap-2">
-                <button className="bg-white dark:bg-gray-800 p-3 rounded-2xl border border-gray-100 dark:border-gray-700 text-gray-500 hover:text-indigo-600 transition-colors">
+                <button className="bg-white dark:bg-gray-800 p-3 rounded-2xl border border-gray-100 dark:border-gray-700 text-gray-500 hover:text-amber-600 transition-colors">
                   <Download size={20} />
                 </button>
               </div>
@@ -454,18 +454,18 @@ const App: React.FC = () => {
                       <th className="py-6 px-6">Descrição</th>
                       <th className="py-6 px-6">Valor Bruto</th>
                       <th className="py-6 px-6 text-pink-500">Dízimo (10%)</th>
-                      <th className="py-6 px-6 text-indigo-600">Líquido</th>
+                      <th className="py-6 px-6 text-amber-600">Líquido</th>
                       <th className="py-6 px-6 text-center">Ação</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-50 dark:divide-gray-700">
                     {data.transactions.slice().reverse().map(t => (
-                      <tr key={t.id} className="group hover:bg-indigo-50/30 dark:hover:bg-indigo-900/10 transition-colors">
+                      <tr key={t.id} className="group hover:bg-amber-50/30 dark:hover:bg-amber-900/10 transition-colors">
                         <td className="py-5 px-6 text-xs text-gray-500 dark:text-gray-400 font-bold">{new Date(t.date).toLocaleDateString('pt-BR')}</td>
                         <td className="py-5 px-6 font-black text-gray-900 dark:text-white">{t.description}</td>
                         <td className="py-5 px-6 font-black text-gray-900 dark:text-white">R$ {t.amount.toFixed(2)}</td>
                         <td className="py-5 px-6 font-black text-pink-600 dark:text-pink-400">R$ {(t.amount * 0.1).toFixed(2)}</td>
-                        <td className="py-5 px-6 font-black text-indigo-600 dark:text-indigo-400">R$ {(t.amount * 0.9).toFixed(2)}</td>
+                        <td className="py-5 px-6 font-black text-amber-600 dark:text-amber-500">R$ {(t.amount * 0.9).toFixed(2)}</td>
                         <td className="py-5 px-6 text-center">
                           <button 
                             onClick={() => deleteTransaction(t.id)}
@@ -491,15 +491,15 @@ const App: React.FC = () => {
         {view === ViewMode.ANALYTICS && (
           <div className="space-y-8 animate-in fade-in duration-700">
             <h2 className="text-3xl font-black dark:text-white flex items-center gap-3">
-              <div className="bg-indigo-100 dark:bg-indigo-900/50 p-3 rounded-2xl">
-                <BarChart3 className="text-indigo-600" size={24} />
+              <div className="bg-amber-100 dark:bg-amber-900/50 p-3 rounded-2xl">
+                <BarChart3 className="text-amber-600" size={24} />
               </div>
               Análise de Prosperidade
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { label: 'Saldo Total', val: `R$ ${totalBalance.toFixed(2)}`, color: 'border-l-indigo-500' },
+                { label: 'Saldo Total', val: `R$ ${totalBalance.toFixed(2)}`, color: 'border-l-amber-500' },
                 { label: 'Dízimo Total', val: `R$ ${titheValue.toFixed(2)}`, color: 'border-l-pink-500' },
                 { label: 'Total Líquido', val: `R$ ${netBalance.toFixed(2)}`, color: 'border-l-green-500' },
                 { label: 'Frequência', val: `${data.transactions.length} Lançamentos`, color: 'border-l-orange-500' }
@@ -511,7 +511,7 @@ const App: React.FC = () => {
               ))}
             </div>
 
-            {/* Nova Linha do Tempo Comparativa */}
+            {/* Linha do Tempo Comparativa (Gold Theme) */}
             <Card className="min-h-[450px]">
               <div className="flex justify-between items-center mb-10">
                 <div>
@@ -520,7 +520,7 @@ const App: React.FC = () => {
                 </div>
                 <div className="hidden md:flex gap-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-indigo-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-amber-500 rounded-full"></div>
                     <span className="text-[10px] font-black dark:text-gray-300 uppercase tracking-widest">Recebido</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -541,11 +541,11 @@ const App: React.FC = () => {
                     />
                     <YAxis hide />
                     <Tooltip 
-                      cursor={{fill: 'rgba(99, 102, 241, 0.05)'}}
+                      cursor={{fill: 'rgba(245, 158, 11, 0.05)'}}
                       contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)', padding: '16px' }}
                     />
                     <Legend iconType="circle" />
-                    <Bar dataKey="total" name="Total Recebido" fill="#6366f1" radius={[8, 8, 0, 0]} />
+                    <Bar dataKey="total" name="Total Recebido" fill="#f59e0b" radius={[8, 8, 0, 0]} />
                     <Bar dataKey="tithe" name="Dízimo (10%)" fill="#ec4899" radius={[8, 8, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
@@ -556,15 +556,15 @@ const App: React.FC = () => {
                {/* Timeline Detalhada por Mês */}
                <Card className="lg:col-span-1 space-y-6">
                  <h3 className="font-black text-xl dark:text-white tracking-tight mb-4 flex items-center gap-2">
-                   <Calendar size={20} className="text-indigo-500" /> Histórico Mensal
+                   <Calendar size={20} className="text-amber-500" /> Histórico Mensal
                  </h3>
                  <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2 no-scrollbar">
                    {monthlyData.slice().reverse().map((m, idx) => (
                      <div key={idx} className="relative pl-6 border-l-2 border-gray-100 dark:border-gray-700 pb-6 last:pb-0">
-                       <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-4 border-indigo-500 shadow-sm"></div>
+                       <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-4 border-amber-500 shadow-sm"></div>
                        <div className="flex justify-between items-start">
                          <div>
-                            <p className="text-[10px] font-black text-indigo-500 uppercase tracking-widest">{m.month}</p>
+                            <p className="text-[10px] font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest">{m.month}</p>
                             <p className="text-lg font-black dark:text-white">R$ {m.total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
                          </div>
                          <div className="text-right">
@@ -582,19 +582,19 @@ const App: React.FC = () => {
                  </div>
                </Card>
 
-               {/* Gráfico de Evolução de Área */}
+               {/* Gráfico de Evolução de Área (Gold Theme) */}
                <Card className="lg:col-span-2 min-h-[400px]">
                  <div className="flex justify-between items-center mb-10">
                     <h3 className="font-black text-xl dark:text-white tracking-tight">Curva de Crescimento</h3>
-                    <div className="bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1 rounded-full text-[10px] font-black text-indigo-600 uppercase tracking-widest">Evolução</div>
+                    <div className="bg-amber-50 dark:bg-amber-900/30 px-3 py-1 rounded-full text-[10px] font-black text-amber-600 uppercase tracking-widest">Evolução</div>
                  </div>
                  <div className="h-[300px]">
                    <ResponsiveContainer width="100%" height="100%">
                      <AreaChart data={monthlyData}>
                        <defs>
                          <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                           <stop offset="5%" stopColor="#6366f1" stopOpacity={0.4}/>
-                           <stop offset="95%" stopColor="#6366f1" stopOpacity={0}/>
+                           <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.4}/>
+                           <stop offset="95%" stopColor="#f59e0b" stopOpacity={0}/>
                          </linearGradient>
                        </defs>
                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" opacity={0.5} />
@@ -608,12 +608,12 @@ const App: React.FC = () => {
                        <YAxis hide />
                        <Tooltip 
                         contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)', padding: '16px' }}
-                        itemStyle={{ fontWeight: 'black', fontSize: '14px' }}
+                        itemStyle={{ fontWeight: 'black', fontSize: '14px', color: '#b45309' }}
                        />
                        <Area 
                         type="monotone" 
                         dataKey="total" 
-                        stroke="#6366f1" 
+                        stroke="#f59e0b" 
                         strokeWidth={6} 
                         fillOpacity={1} 
                         fill="url(#chartGradient)" 
@@ -630,7 +630,7 @@ const App: React.FC = () => {
         {view === ViewMode.SETTINGS && (
           <div className="max-w-2xl mx-auto space-y-8 animate-in slide-in-from-bottom-6 duration-700">
              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-indigo-600 p-3 rounded-2xl text-white">
+                <div className="bg-amber-600 p-3 rounded-2xl text-white">
                   <SettingsIcon size={24} />
                 </div>
                 <h2 className="text-3xl font-black dark:text-white">Ajustes & Backup</h2>
@@ -639,13 +639,13 @@ const App: React.FC = () => {
              <Card className="space-y-8 divide-y divide-gray-50 dark:divide-gray-700">
                 <div className="pb-2">
                   <div className="flex items-center gap-2 mb-2">
-                    <Download size={18} className="text-indigo-600" />
+                    <Download size={18} className="text-amber-600" />
                     <h3 className="font-black text-gray-900 dark:text-white">Exportar Dados</h3>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">Baixe um arquivo de segurança com todas as suas informações locais.</p>
                   <button 
                     onClick={exportData}
-                    className="w-full flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white font-black py-5 rounded-3xl transition-all shadow-lg shadow-indigo-500/20 active:scale-95"
+                    className="w-full flex items-center justify-center gap-3 bg-amber-600 hover:bg-amber-700 text-white font-black py-5 rounded-3xl transition-all shadow-lg shadow-amber-500/20 active:scale-95"
                   >
                     Exportar Backup (.json)
                   </button>
@@ -653,7 +653,7 @@ const App: React.FC = () => {
 
                 <div className="pt-8">
                   <div className="flex items-center gap-2 mb-2">
-                    <Upload size={18} className="text-purple-600" />
+                    <Upload size={18} className="text-yellow-600" />
                     <h3 className="font-black text-gray-900 dark:text-white">Importar Dados</h3>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">Restaure transações de um arquivo de backup.</p>
@@ -694,12 +694,12 @@ const App: React.FC = () => {
             <h3 className="text-2xl font-black mb-4 dark:text-white">Definir Meta</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 font-medium">Qual valor total você deseja alcançar em sua jornada de prosperidade?</p>
             <div className="relative mb-8">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-indigo-600">R$</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-amber-600">R$</span>
               <input 
                 type="number" 
                 value={tempGoal}
                 onChange={e => setTempGoal(e.target.value)}
-                className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-4 pl-12 focus:ring-4 focus:ring-indigo-500/30 outline-none dark:text-white font-black text-xl"
+                className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-4 pl-12 focus:ring-4 focus:ring-amber-500/30 outline-none dark:text-white font-black text-xl"
                 placeholder="0,00"
               />
             </div>
@@ -712,7 +712,7 @@ const App: React.FC = () => {
               </button>
               <button 
                 onClick={handleUpdateGoal}
-                className="flex-1 bg-indigo-600 text-white font-black py-4 rounded-2xl shadow-lg shadow-indigo-500/30 active:scale-95 transition-all"
+                className="flex-1 bg-amber-600 text-white font-black py-4 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all"
               >
                 Salvar Meta
               </button>
@@ -725,7 +725,7 @@ const App: React.FC = () => {
       {isAdding && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-6 bg-black/70 backdrop-blur-md animate-in fade-in duration-300">
           <Card className="w-full max-w-lg animate-in zoom-in-95 duration-500 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-1 h-full bg-indigo-600"></div>
+            <div className="absolute top-0 left-0 w-1 h-full bg-amber-600"></div>
             <div className="flex justify-between items-center mb-8">
               <h3 className="text-3xl font-black dark:text-white tracking-tight">Novo Recebimento</h3>
               <button onClick={() => setIsAdding(false)} className="bg-gray-100 dark:bg-gray-700 p-2 rounded-full text-gray-400 hover:text-red-500 transition-all">
@@ -741,7 +741,7 @@ const App: React.FC = () => {
                   type="text" 
                   value={form.description}
                   onChange={e => setForm({...form, description: e.target.value})}
-                  className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-5 focus:ring-4 focus:ring-indigo-500/30 outline-none dark:text-white font-bold text-lg"
+                  className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-5 focus:ring-4 focus:ring-amber-500/30 outline-none dark:text-white font-bold text-lg"
                   placeholder="Ex: Pagamento Projeto Web"
                 />
               </div>
@@ -749,14 +749,14 @@ const App: React.FC = () => {
                 <div>
                   <label className="block text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-3 ml-1">Valor (R$)</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-indigo-600">R$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-amber-600">R$</span>
                     <input 
                       required
                       type="number" 
                       step="0.01"
                       value={form.amount}
                       onChange={e => setForm({...form, amount: e.target.value})}
-                      className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-5 pl-12 focus:ring-4 focus:ring-indigo-500/30 outline-none dark:text-white font-black text-xl"
+                      className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-5 pl-12 focus:ring-4 focus:ring-amber-500/30 outline-none dark:text-white font-black text-xl"
                       placeholder="0,00"
                     />
                   </div>
@@ -768,19 +768,19 @@ const App: React.FC = () => {
                     type="date" 
                     value={form.date}
                     onChange={e => setForm({...form, date: e.target.value})}
-                    className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-5 focus:ring-4 focus:ring-indigo-500/30 outline-none dark:text-white font-bold"
+                    className="w-full bg-gray-100 dark:bg-gray-700 border-none rounded-2xl p-5 focus:ring-4 focus:ring-amber-500/30 outline-none dark:text-white font-bold"
                   />
                 </div>
               </div>
               
-              <div className="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-2xl flex items-center justify-between border border-indigo-100 dark:border-indigo-900/50">
-                 <span className="text-xs font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Dízimo Sugerido:</span>
+              <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-2xl flex items-center justify-between border border-amber-100 dark:border-amber-900/50">
+                 <span className="text-xs font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest">Dízimo Sugerido:</span>
                  <span className="text-lg font-black text-pink-600 dark:text-pink-400">R$ {form.amount ? (parseFloat(form.amount) * 0.1).toFixed(2) : '0,00'}</span>
               </div>
 
               <button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-indigo-600 to-indigo-800 text-white font-black py-5 rounded-3xl shadow-xl shadow-indigo-500/40 hover:shadow-indigo-500/60 hover:-translate-y-1 transition-all mt-4 text-lg active:scale-95"
+                className="w-full bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-black py-5 rounded-3xl shadow-xl shadow-amber-500/40 hover:shadow-amber-500/60 hover:-translate-y-1 transition-all mt-4 text-lg active:scale-95"
               >
                 Salvar Recebimento
               </button>
@@ -789,7 +789,7 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {/* Creative Bottom Navigation */}
+      {/* Creative Bottom Navigation (Gold Theme) */}
       <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-2xl p-2 rounded-[40px] shadow-2xl border border-white/40 dark:border-gray-800 z-50 flex items-center gap-1 w-[90%] max-w-md scale-100 transition-transform active:scale-95 origin-center">
         {[
           { id: ViewMode.DASHBOARD, icon: Wallet, label: 'Ganhos' },
@@ -802,8 +802,8 @@ const App: React.FC = () => {
             onClick={() => setView(item.id)}
             className={`flex-1 flex flex-col items-center gap-1 py-4 rounded-[32px] transition-all relative ${
               view === item.id 
-                ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-500/40 -translate-y-2' 
-                : 'text-gray-400 hover:text-indigo-500'
+                ? 'bg-amber-600 text-white shadow-xl shadow-amber-500/40 -translate-y-2' 
+                : 'text-gray-400 hover:text-amber-500'
             }`}
           >
             <item.icon size={22} className={view === item.id ? 'animate-bounce' : ''} />
