@@ -5,10 +5,18 @@ export interface Transaction {
   description: string;
   date: string;
   type: 'income';
+  isTithePaid: boolean; // Mantido para compatibilidade, mas a lógica principal agora será por mês
+}
+
+export interface TithePayment {
+  id: string;
+  amount: number;
+  date: string;
 }
 
 export interface WalletData {
   transactions: Transaction[];
+  tithePayments: TithePayment[];
   darkMode: boolean;
   currency: string;
   prosperityGoal?: number;
